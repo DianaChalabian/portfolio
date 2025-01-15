@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 20px 30px;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+/* General styles */
+nav a {
+    text-decoration: none;
+    color: #264653;
+    padding: 5px 20px;
+
+
+}
+nav a:hover {   
+ font-weight: bolder;
+ transition: 0.7s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 200vw;
+    overflow: hidden;
+}
+
+/* Horizontal Scroll Sections */
+.scroll-container {
+    display: flex;
+    width: 100vw; /* Set to full viewport width */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* Snap to sections */
+    height: 100%;
+}
+
+.panel {
+    min-width: 100vw; /* Full viewport width for each panel */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    padding: 0px;
+    text-align: center;
+    background: #ffaac5;
+}
+
+
+.panel:nth-child(1) {
+    background-color: #ffaac5; 
+    /* Light pink for the first panel */
+}
+
+
+.panel:nth-child(2) {
+    background-color: #96d8f9; /* Light blue for the second panel */
+}
+
+.panel:nth-child(3) {
+    background-color: #ffdf91; /* Light yellow for the third panel */
+}
+
+.panel:nth-child(4) {
+    background-color: #c8f7c5; /* Light green for the fourth panel */
+}
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ffaac5;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff6f91;
+}
+
+
+
+
+
+/* Customize Section Content */
+.project-item {
+    background-color: #264653;
+    color: #fff;
+    padding: 100px;
+    border-radius: 20px;
+    display: flex; /* Arrange items in a row */
+    gap: 20px; /* Space between boxes */
+    justify-content: center; /* Center horizontally */
+    flex-wrap: wrap; /* Allow wrapping to a new row if screen size is small */
+    margin: 20px;
+}
+
+
+
+.panel {
+    color: #264653;
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align to the top */
+    align-items: center;
+    scroll-snap-align: start;
+    padding: 80px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    header {
+        text-align: left;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* General styles for panel text */
+.panel h1, 
+.panel h2 {
+    font-size: 10rem; /* Default font size for larger screens */
+    text-align: center;
+    margin: 10px 0;
+}
+.panel p{
+font-size: 1.4rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .panel h1, 
+    .panel h2 {
+        font-size: 4rem; /* Smaller font size for headers */
+    }
+
+    .panel p {
+        font-size: 0.9rem; /* Smaller font size for paragraphs */
+    }
+}
+
+@media (max-width: 480px) {
+    .panel h1, 
+    .panel h2 {
+        font-size: 1.5rem; /* Even smaller font size for headers */
+    }
+
+    .panel p {
+        font-size: 0.8rem; /* Adjust paragraph font size */
+    }
+}
