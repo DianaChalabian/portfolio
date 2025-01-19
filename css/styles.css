@@ -3,27 +3,28 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header {
-    padding: 20px 30px;
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-}
 
-/* General styles */
-nav a {
-    text-decoration: none;
-    color: #264653;
-    padding: 5px 20px;
-
-
-}
-nav a:hover {   
- font-weight: bolder;
- transition: 0.7s ease;
-}
-
+.navbar {
+    display: flex; /* Arrange items in a row */
+    justify-content: space-around; /* Evenly space items */
+    padding: 10px;
+    background-color: transparent; /* Transparent navbar background */
+    border: none; /* Remove any border from the navbar */
+  }
+  
+  .nav-item{
+    background-color: #fff; /* White background for each item */
+    border: 2px solid #000; /* Black outline around each item */
+    padding: 10px 20px; /* Space inside each item */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth effects */
+  }
+  
+  .nav-item:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+  }
 * {
     margin: 0;
     padding: 0;
@@ -32,78 +33,276 @@ nav a:hover {
 
 .container {
     display: flex;
-    height: 100vh;
-    width: 200vw;
-    overflow: hidden;
+    flex-direction: column; /* Stack panels vertically */
+    gap: 20px; /* Space between sections */
+    height: auto; /* Let content define the height */
+    width: 100%; /* Full width of the viewport */
+    overflow: auto; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable vertical snapping */
 }
 
-/* Horizontal Scroll Sections */
-.scroll-container {
-    display: flex;
-    width: 100vw; /* Set to full viewport width */
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory; /* Snap to sections */
-    height: 100%;
-}
 
-.panel {
-    min-width: 100vw; /* Full viewport width for each panel */
-    height: 100%;
+
+  
+  .snap-section {
+    scroll-snap-align: start; /* Snap to the start of the section */
+    height: 100vh; /* Full viewport height for each section */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: center;
-    padding: 0px;
-    text-align: center;
-    background: #ffaac5;
-}
+    font-size: 2rem;
+    color: white;
+  }
 
+.panel {
+    width: 100%; /* Full viewport width */
+    min-height: 100vh; /* Full viewport height for each panel */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align to the top */
+    align-items: center;
+    padding: 80px;
+    text-align: center;
+    background: #ffaac5; /* Default background color */
+}
 
 .panel:nth-child(1) {
-    background-color: #ffaac5; 
-    /* Light pink for the first panel */
+    background-color: #ffaac5; /* Light pink for the first panel */
 }
+
+
+
+
+.project {
+    display: flex; /* Arrange items in a row */
+    justify-content: center; /* Evenly space items */
+    padding: 10px;
+    background-color: transparent; /* Light background for the nav */
+    border-bottom: 2px solid #000; /* Optional bottom border for the navbar */
+    font-weight: bolder;
+    font-size: 30px;
+    gap: 4px;
+  }
+  
+
+
+
 
 
 .panel:nth-child(2) {
-    background-color: #96d8f9; /* Light blue for the second panel */
+    background-color: #73bbdf; /* Light blue for the second panel */
 }
+
+
+.card-row {
+    display: flex; /* Arrange items in a row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px;
+    gap: 20px; /* Space between cards */
+    scroll-snap-type: x mandatory; /* Enable snapping */
+  
+  }
+
+  
+
+  
+  .card {
+    min-width: fit-content; /* Minimum width for each card */
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    background-color: #fff; /* Card background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    scroll-snap-align: center; /* Snap to the center of the viewport */
+    width: 410px;
+    height: 400px;
+
+ 
+  }
+  
+  .card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .card p {
+    margin: 0 0 20px;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  .card button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Make the scrollbar look cleaner (optional) */
+  .card-row::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .card-row::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+  }
+  
+  .card-row::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
+
+
+
+
 
 .panel:nth-child(3) {
     background-color: #ffdf91; /* Light yellow for the third panel */
 }
 
+
+
+
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.card.image {
+  background: none;
+  overflow: hidden;
+}
+
+.card.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.card.image:hover img {
+  transform: scale(1.1);
+}
+.card.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.card.skills ul li {
+  margin: 5px 0;
+  padding: 8px 20px;
+  background: rgba(40, 157, 73, 0.2);
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.card.skills ul li:hover {
+  background: rgba(17, 103, 18, 0.5);;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+
+
+
+
+
+
+.hobbies ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.hobbies ul li {
+  margin: 5px 0;
+  padding: 8px 20px;
+  background: rgba(40, 157, 73, 0.2);
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.hobbies ul li:hover {
+  background: rgba(17, 103, 18, 0.5);
+}
+
+
+
+
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
 .panel:nth-child(4) {
     background-color: #c8f7c5; /* Light green for the fourth panel */
 }
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-form input, form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #ffaac5;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #ff6f91;
-}
-
-
-
-
 
 /* Customize Section Content */
 .project-item {
@@ -118,43 +317,6 @@ form button:hover {
     margin: 20px;
 }
 
-
-
-.panel {
-    color: #264653;
-    min-width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align to the top */
-    align-items: center;
-    scroll-snap-align: start;
-    padding: 80px;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-    header {
-        text-align: left;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 /* General styles for panel text */
 .panel h1, 
 .panel h2 {
@@ -162,8 +324,9 @@ form button:hover {
     text-align: center;
     margin: 10px 0;
 }
-.panel p{
-font-size: 1.4rem;
+
+.panel p {
+    font-size: 1.4rem;
 }
 
 /* Responsive design for smaller screens */
