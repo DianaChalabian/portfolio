@@ -1,4 +1,4 @@
-document.querySelectorAll('nav a').forEach(anchor => {
+document.querySelectorAll('nav-item').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -10,7 +10,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 
 
-document.querySelectorAll('nav a').forEach(anchor => {
+document.querySelectorAll('nav-item').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -35,7 +35,7 @@ closeModalBtn.addEventListener('click', () => {
 
 
 
-document.querySelectorAll('.side-nav a').forEach(link => {
+document.querySelectorAll('.side-nav-item').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const target = document.querySelector(e.target.getAttribute('href'));
